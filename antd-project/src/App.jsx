@@ -76,25 +76,29 @@ const App = () => {
           borderRadius: "8px",
           boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           backgroundColor: "azure",
+          overflow: "hidden", // Prevents extra elements from overflowing
         }}
       >
         <strong
           style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "10px",
-            paddingBottom: "10px",
+            display: "block",
             textAlign: "center",
-            flexWrap: "wrap",
+            paddingBottom: "10px",
+            fontSize: "18px",
+            fontWeight: "bold",
           }}
         >
           Employee Details
+          <br />
           <img
             src="/manager.png"
             alt="employee"
-            style={{ height: "30px", width: "40px", maxWidth: "100%" }}
+            style={{
+              height: "30px",
+              width: "40px",
+              display: "block",
+              margin: "0 auto",
+            }}
           />
         </strong>
         <Form form={form} onFinish={onFinish} layout="vertical">
@@ -244,7 +248,9 @@ const App = () => {
         </Form>
         {/* </div> */}
         <ol>
-          <div style={{ marginTop: "20px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+          >
             {data.map((record, index) => (
               <div key={index} onClick={() => onViewRecord(record)}>
                 <span>{record.name}</span>
