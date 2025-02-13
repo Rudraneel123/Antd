@@ -81,16 +81,20 @@ const App = () => {
         <strong
           style={{
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "row",
             alignItems: "center",
-            paddingBottom: "3px",
+            justifyContent: "center",
+            gap: "10px",
+            paddingBottom: "10px",
+            textAlign: "center",
+            flexWrap: "wrap",
           }}
         >
           Employee Details
           <img
             src="/manager.png"
             alt="employee"
-            style={{ height: "30px", width: "40px" }}
+            style={{ height: "30px", width: "40px", maxWidth: "100%" }}
           />
         </strong>
         <Form form={form} onFinish={onFinish} layout="vertical">
