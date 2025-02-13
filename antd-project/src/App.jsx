@@ -65,6 +65,7 @@ const App = () => {
         alignItems: "center",
         minHeight: "100vh",
         padding: "20px",
+        overflowY: "auto",
       }}
     >
       <div
@@ -76,7 +77,8 @@ const App = () => {
           borderRadius: "8px",
           boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           backgroundColor: "azure",
-          overflow: "hidden", // Prevents extra elements from overflowing
+          maxHeight: "80vh", // Prevents overflowing content
+          overflowY: "auto",
         }}
       >
         <strong
@@ -109,7 +111,7 @@ const App = () => {
                 name="name"
                 rules={[{ required: true, message: "Please input your name!" }]}
               >
-                <Input style={{ width: "100%" }}/>
+                <Input style={{ width: "100%" }} />
               </Form.Item>
             </Col>
             <Col xs={24} sm={12} md={8} style={{ minWidth: "200px" }}>
