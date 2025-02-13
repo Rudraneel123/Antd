@@ -61,15 +61,15 @@ const App = () => {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh",
-        padding: "350px",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          width: "80%",
+          width: "100%",
           maxWidth: "800px",
           background: "#fff",
           padding: "20px",
@@ -87,11 +87,15 @@ const App = () => {
           }}
         >
           Employee Details
-          <img src="/manager.png" alt="employee" style={{height:'30px',width:'40px'}} />
+          <img
+            src="/manager.png"
+            alt="employee"
+            style={{ height: "30px", width: "40px" }}
+          />
         </strong>
         <Form form={form} onFinish={onFinish} layout="vertical">
-          <Row gutter={16}>
-            <Col span={8}>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Name"
                 name="name"
@@ -100,7 +104,7 @@ const App = () => {
                 <Input />
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Email"
                 name="email"
@@ -111,7 +115,7 @@ const App = () => {
                 <Input type="email" />
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Age"
                 name="age"
@@ -126,8 +130,8 @@ const App = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row gutter={16}>
-            <Col span={8}>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Country"
                 name="country"
@@ -142,7 +146,7 @@ const App = () => {
                 </Select>
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Language"
                 name="language"
@@ -157,7 +161,7 @@ const App = () => {
                 </Radio.Group>
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Skills"
                 name="skills"
@@ -176,8 +180,8 @@ const App = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row gutter={16}>
-            <Col span={8}>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Father's Name"
                 name="fathername"
@@ -191,7 +195,7 @@ const App = () => {
                 <Input />
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Spouse's Name"
                 name="spousename"
@@ -205,7 +209,7 @@ const App = () => {
                 <Input />
               </Form.Item>
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={12} md={8}>
               <Form.Item
                 label="Years of Experience"
                 name="experience"
