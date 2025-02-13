@@ -88,7 +88,7 @@ const App = () => {
             paddingBottom: "10px",
             fontSize: "18px",
             fontWeight: "bold",
-            color:'black'
+            color: "black",
           }}
         >
           Employee Details
@@ -256,13 +256,33 @@ const App = () => {
           >
             {data.map((record, index) => (
               <div key={index} onClick={() => onViewRecord(record)}>
-                <span style={{color:'black'}}>{record.name}</span>
-                <span style={{ marginLeft: 10,color:'black' }}>{record.email}</span>
+                <span style={{ color: "black" }}>{record.name}</span>
+                <span style={{ marginLeft: 10, color: "black" }}>
+                  {record.email}
+                </span>
                 <Button type="link" onClick={() => onDeleteRecord(index)}>
-                  Delete
+                  <img
+                    src="/delete.png"
+                    alt="delete"
+                    style={{
+                      height: "20px",
+                      width: "30px",
+                      display: "block",
+                      margin: "0 auto",
+                    }}
+                  />
                 </Button>
                 <Button type="link" onClick={() => onEditRecord(index, record)}>
-                  Edit
+                  <img
+                    src="/pencil.png"
+                    alt="pencil"
+                    style={{
+                      height: "20px",
+                      width: "30px",
+                      display: "block",
+                      margin: "0 auto",
+                    }}
+                  />
                 </Button>
               </div>
             ))}
