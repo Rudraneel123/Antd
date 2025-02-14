@@ -302,7 +302,7 @@ const App = () => {
                   borderBottom: "1px solid #ddd",
                 }}
               >
-                <div style={{ flex: 1, display: "flex", gap: "10px" }}>
+                <div /*style={{ flex: 1, display: "flex" }}*/>
                   <span style={{ color: "black" }}>{record.name}</span>
                   {/* <span style={{ marginLeft: 10, color: "black" }}>
                     {record.email}
