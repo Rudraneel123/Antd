@@ -322,8 +322,8 @@ const App = () => {
                       src="/delete.png"
                       alt="delete"
                       style={{
-                        height: "20px",
-                        width: "30px",
+                        height: "10px",
+                        width: "20px",
                         display: "block",
                         margin: "0 auto",
                       }}
@@ -337,8 +337,8 @@ const App = () => {
                       src="/pencil.png"
                       alt="pencil"
                       style={{
-                        height: "20px",
-                        width: "30px",
+                        height: "10px",
+                        width: "20px",
                         display: "block",
                         margin: "0 auto",
                       }}
