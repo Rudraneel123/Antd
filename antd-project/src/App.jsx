@@ -304,9 +304,9 @@ const App = () => {
               >
                 <div style={{ flex: 1, display: "flex", gap: "10px" }}>
                   <span style={{ color: "black" }}>{record.name}</span>
-                  <span style={{ marginLeft: 10, color: "black" }}>
+                  {/* <span style={{ marginLeft: 10, color: "black" }}>
                     {record.email}
-                  </span>
+                  </span> */}
                 </div>
                 <div style={{ display: "flex", gap: "10px" }}>
                   <Button
