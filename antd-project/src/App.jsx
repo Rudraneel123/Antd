@@ -75,7 +75,7 @@ const App = () => {
           background: "#fff",
           padding: "20px",
           borderRadius: "8px",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+          // boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           backgroundColor: "azure",
           maxHeight: "80vh", // Prevents overflowing content
           overflowY: "auto",
@@ -212,7 +212,7 @@ const App = () => {
                 name="spousename"
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: "Please input your Spouse's  name!",
                   },
                 ]}
@@ -235,6 +235,41 @@ const App = () => {
               </Form.Item>
             </Col>
           </Row>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8} style={{ minWidth: "200px" }}>
+              <Form.Item
+                label="Hobbies"
+                name="hobbies"
+                // rules={[
+                //   { required: true, message: "Select the following" },
+                // ]}
+              >
+                <Checkbox.Group>
+                  <Checkbox value="reading">Reading</Checkbox>
+                  <Checkbox value="coding">Coding</Checkbox>
+                  <Checkbox value="vlogging">Vlogging</Checkbox>
+                  <Checkbox value="travelling">Travelling</Checkbox>
+                </Checkbox.Group>
+              </Form.Item>
+            </Col>
+            <Col xs={24} sm={12} md={8} style={{ minWidth: "200px" }}>
+              <Form.Item
+                label="Ready for Reallocation?"
+                name="realloc"
+                rules={[
+                  { required: true, message: "Please select Yes or No!" },
+                ]}
+              >
+                <Radio.Group>
+                  <Radio value="Yes">Yes</Radio>
+                  <Radio value="No">No</Radio>
+                </Radio.Group>
+              </Form.Item>
+            </Col>
+            <Col xs={24} sm={12} md={8} style={{ minWidth: "200px" }}>
+              <Form.Item></Form.Item>
+            </Col>
+          </Row>
 
           <Row justify="center" gutter={16}>
             <Col>
@@ -255,35 +290,60 @@ const App = () => {
             style={{ display: "flex", flexDirection: "column", gap: "10px" }}
           >
             {data.map((record, index) => (
-              <div key={index} onClick={() => onViewRecord(record)}>
-                <span style={{ color: "black" }}>{record.name}</span>
-                <span style={{ marginLeft: 10, color: "black" }}>
-                  {record.email}
-                </span>
-                <Button type="link" onClick={() => onDeleteRecord(index)}>
-                  <img
-                    src="/delete.png"
-                    alt="delete"
-                    style={{
-                      height: "20px",
-                      width: "30px",
-                      display: "block",
-                      margin: "0 auto",
+              <div
+                key={index}
+                onClick={() => onViewRecord(record)}
+                style={{
+                  display: "flex",
+                  alignItems: "center", // Align items in a single line
+                  justifyContent: "space-between", // Space between text and icons
+                  gap: "10px", // Add spacing between elements
+                  padding: "10px",
+                  borderBottom: "1px solid #ddd",
+                }}
+              >
+                <div style={{ flex: 1, display: "flex", gap: "10px" }}>
+                  <span style={{ color: "black" }}>{record.name}</span>
+                  <span style={{ marginLeft: 10, color: "black" }}>
+                    {record.email}
+                  </span>
+                </div>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <Button
+                    type="link"
+                    onClick={(event) => {
+                      event.stopPropagation(); // Prevents triggering the onViewRecord function
+                      onDeleteRecord(index);
                     }}
-                  />
-                </Button>
-                <Button type="link" onClick={() => onEditRecord(index, record)}>
-                  <img
-                    src="/pencil.png"
-                    alt="pencil"
-                    style={{
-                      height: "20px",
-                      width: "30px",
-                      display: "block",
-                      margin: "0 auto",
-                    }}
-                  />
-                </Button>
+                  >
+                    {" "}
+                    <img
+                      src="/delete.png"
+                      alt="delete"
+                      style={{
+                        height: "20px",
+                        width: "30px",
+                        display: "block",
+                        margin: "0 auto",
+                      }}
+                    />
+                  </Button>
+                  <Button
+                    type="link"
+                    onClick={() => onEditRecord(index, record)}
+                  >
+                    <img
+                      src="/pencil.png"
+                      alt="pencil"
+                      style={{
+                        height: "20px",
+                        width: "30px",
+                        display: "block",
+                        margin: "0 auto",
+                      }}
+                    />
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
@@ -303,6 +363,8 @@ const App = () => {
           <p>Father`s Name: {record.fathername}</p>
           <p>Spouse`s Name: {record.spousename}</p>
           <p>YoExp: {record.experience}</p>
+          <p>Reallocation: {record.realloc}</p>
+          <p>Hobbies: {record.hobbies}</p>
         </Modal>
       </div>
     </div>
