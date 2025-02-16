@@ -14,7 +14,7 @@ import {
 } from "antd";
 import "antd/dist/reset.css";
 
-const { Header, Footer, Content } = Layout;
+const { Header, Footer } = Layout;
 
 const App = () => {
   const [form] = Form.useForm();
